@@ -1,7 +1,9 @@
+import endlessConstellation from '../../../assets/endless-constellation.svg';
+
 const PlanetCard = ({ planet }) => {
   return (
     <div className="card_planet">
-      <div className="card_img_container_planet">
+      <div className="card_img_container_planet" style={{ backgroundImage: `url(${endlessConstellation})` }}>
         <img
           className="card_img_planet"
           src={planet.image}
