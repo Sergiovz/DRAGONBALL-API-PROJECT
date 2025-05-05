@@ -19,7 +19,7 @@ const Nav = ({ activePage, setActivePage }) => {
   return (
     <header className="app-header">
       <picture className="app-header__logo">
-        <img src="src\assets\DragonBall-Logo.png" alt="Logo Dragon-Ball Z" />
+        <img src="../../../assets/DragonBall-Logo.png" alt="Logo Dragon-Ball Z" />
       </picture>
       <nav className="app-navigation">
         <ul className="app-navigation__list">
