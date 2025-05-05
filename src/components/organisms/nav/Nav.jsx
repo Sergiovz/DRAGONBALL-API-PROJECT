@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import NavItem from "./NavItem";
+import dragonBallLogo from "../../../assets/DragonBall-Logo.png";
 import "./nav.css";
 
 const Nav = ({ activePage, setActivePage }) => {
@@ -19,7 +20,7 @@ const Nav = ({ activePage, setActivePage }) => {
   return (
     <header className="app-header">
       <picture className="app-header__logo">
-        <img src="../../../assets/DragonBall-Logo.png" alt="Logo Dragon-Ball Z" />
+        <img src={dragonBallLogo} alt="Logo Dragon-Ball Z" />
       </picture>
       <nav className="app-navigation">
         <ul className="app-navigation__list">
