@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Bangers", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background: linear-gradient(90deg, #f8ba0f, #f1ee10, #f8ba0f);
+  color: #fff;
+}
+
+.characters__container, .transformations__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  place-items: center;
+  gap: 32px;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75rem;
+  width: clamp(250px, 90%, 280px);
+  border-radius: 0.5rem;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  cursor: pointer;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.card:focus-visible {
+  outline: 3px solid #ff432a;
+  outline-offset: 2px;
+}
+
+.card__img-container {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+  background-position: center center;
+  background-size: cover;
+  min-height: 350px;
+  max-height: 350px;
+  background: linear-gradient(to bottom, #1e293b, #334155);
+}
+
+.card__img {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  max-height: 400px;
+  object-position: center center;
+  object-fit: contain;
+  z-index: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.card__img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.8))
+    drop-shadow(10px 0 2px rgba(255, 165, 0, 0.6));
+}
+
+.card__img-container:hover {
+  box-shadow: 0px 0px 5px 2px #f4f4f4;
+}
+
+.card__info-container {
+  width: 85%;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  color: #1a202c;
+}
+
+.card__info {
+  z-index: 1;
+}
+
+.card__info-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card__info-style {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 0.5rem;
+  background: linear-gradient(to bottom, #1e293b, #334155);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__info-style p {
+  line-height: 1.2;
+  font-size: 1.1rem;
+  color: #ff9500;
+  margin: 0;
+}
+
+.card__info-style span {
+  font-size: 0.9rem;
+  color: #f4f4f4;
+  letter-spacing: 1px;
+  margin-left: 0.25rem;
+}
+
+.error-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.15);
+  color: #ff432a;
+  font-size: 2rem;
+}
+
+.lazy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.lazy-container__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #ffd700 40%, #ff9500 100%);
+  border: 6px solid #ff9500;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 0 24px 8px #ffd70088, 0 0 8px 2px #ff9500aa;
+  animation: spin 1s linear infinite, aura 1.5s ease-in-out infinite alternate;
+  position: relative;
+}
+
+.lazy-container__loading::after {
+  content: "★";
+  color: #ff9500;
+  font-size: 1.7rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  text-shadow: 0 0 8px #fff200, 0 0 2px #ff9500;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aura {
+  0% {
+    box-shadow: 0 0 24px 8px #ffd70088, 0 0 8px 2px #ff9500aa;
+  }
+  100% {
+    box-shadow: 0 0 40px 16px #ffd700cc, 0 0 16px 4px #ff9500cc;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* */
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .characters__container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .character-card__img {
+    min-height: 400px;
+    max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* */
+}

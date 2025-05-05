@@ -1,0 +1,129 @@
+.container_planets {
+  background: url("src/assets/endless-constellation.svg");
+  background-position: center center;
+  background-attachment: fixed;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  place-items: center;
+  gap: 2rem;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card_planet {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2px;
+  align-items: stretch;
+  margin: 0.75rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.card_img_container_planet {
+  width: 49%;
+  position: relative;
+  background-position: center center;
+  background-size: contain;
+  min-height: 350px;
+  max-height: 350px;
+}
+
+.card_img_planet {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  object-position: center center;
+  object-fit: cover;
+  z-index: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.card_img_planet:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(5px 0 3px #000000cf);
+}
+
+.card_img_container_planet:hover {
+  filter: drop-shadow(0px 0px 6px #f4f4f4);
+}
+
+.card_info_planet {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #f4f4f4;
+  background: linear-gradient(to bottom, #1e293b, #334155);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card_info_container_planet {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6%;
+  justify-content: space-around;
+}
+
+.card_info_container_style_planet {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.card_info_container_style_planet p {
+  line-height: 1.2;
+  color: #ff6525;
+  margin: 0;
+}
+
+.card_info_container_style_planet span {
+  font-size: 0.9rem;
+  color: #ff9500;
+  letter-spacing: 0.8px;
+}
+
+@media screen and (max-width: 768px) {
+  .container_planets {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .card_img_container_planet {
+    min-height: 250px;
+    max-height: 250px;
+  }
+
+  .card_info_container_planet {
+    gap: 4%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container_planets {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+  }
+
+  .card_img_container_planet {
+    min-height: 200px;
+    max-height: 200px;
+  }
+
+  .card_info_container_planet {
+    gap: 2%;
+  }
+}
